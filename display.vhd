@@ -41,9 +41,10 @@ begin
         variable V_clk_divider : unsigned(0 to 5);
     begin
         if rising_edge(I_clk) then
+            L_display_clk <= '0';
             V_clk_divider := V_clk_divider + 1;
             if V_clk_divider = 0 then
-                L_display_clk <= not L_display_clk;
+                L_display_clk <= '1';
             end if;
         end if;
     end process;
